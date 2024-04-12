@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class SchemeTaskAdd(BaseModel):
@@ -10,6 +10,8 @@ class SchemeTaskAdd(BaseModel):
 
 class SchemeTask(SchemeTaskAdd):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SchemeTaskId(BaseModel):
